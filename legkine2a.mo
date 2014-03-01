@@ -1,0 +1,40 @@
+model legkine2a
+  inner Modelica.Mechanics.MultiBody.World world annotation(Placement(visible = true, transformation(origin = {-143.56,163.305}, extent = {{-10,-10},{10,10}}, rotation = 0)));
+  Modelica.Mechanics.MultiBody.Parts.Fixed fixed4(r = {0,5,0}) annotation(Placement(visible = true, transformation(origin = {-167.625,-6.77322}, extent = {{-10,-10},{10,10}}, rotation = 0)));
+  Modelica.Mechanics.MultiBody.Parts.Fixed fixed5(r = {0,-5,0}) annotation(Placement(visible = true, transformation(origin = {-168.494,-47.1397}, extent = {{-10,-10},{10,10}}, rotation = 0)));
+  Modelica.Mechanics.MultiBody.Joints.Prismatic prismatic3(useAxisFlange = true) annotation(Placement(visible = true, transformation(origin = {-85.5975,14.6286}, extent = {{-10,-10},{10,10}}, rotation = 0)));
+  Modelica.Mechanics.MultiBody.Joints.Prismatic prismatic4(useAxisFlange = true) annotation(Placement(visible = true, transformation(origin = {-87.6331,-74.4166}, extent = {{-10,-10},{10,10}}, rotation = 0)));
+  Modelica.Mechanics.MultiBody.Parts.Fixed fixed6(r = {20,0,0}) annotation(Placement(visible = true, transformation(origin = {-56.8445,-30.8861}, extent = {{-10,-10},{10,10}}, rotation = 0)));
+  Modelica.Mechanics.MultiBody.Parts.FixedTranslation fixedtranslation9(r = {10,0,0}) annotation(Placement(visible = true, transformation(origin = {-89.2207,-8.96648}, extent = {{10,-10},{-10,10}}, rotation = 0)));
+  Modelica.Mechanics.MultiBody.Parts.FixedTranslation fixedtranslation10(r = {10,0,0}) annotation(Placement(visible = true, transformation(origin = {-91.6822,-48.0434}, extent = {{10,-10},{-10,10}}, rotation = 0)));
+  Modelica.Mechanics.MultiBody.Parts.FixedTranslation fixedtranslation11(r = {10,0,0}) annotation(Placement(visible = true, transformation(origin = {-31.6822,14.1104}, extent = {{10,-10},{-10,10}}, rotation = 0)));
+  Modelica.Mechanics.MultiBody.Parts.FixedTranslation fixedtranslation12(r = {10,0,0}) annotation(Placement(visible = true, transformation(origin = {-36.6053,-80.6588}, extent = {{10,-10},{-10,10}}, rotation = 0)));
+  Modelica.Mechanics.MultiBody.Parts.FixedTranslation fixedtranslation13(r = {20,0,0}) annotation(Placement(visible = true, transformation(origin = {42.7793,12.8797}, extent = {{10,-10},{-10,10}}, rotation = 0)));
+  Modelica.Mechanics.MultiBody.Parts.FixedTranslation fixedtranslation14(r = {20,0,0}) annotation(Placement(visible = true, transformation(origin = {41.2409,-81.2742}, extent = {{10,-10},{-10,10}}, rotation = 0)));
+  Modelica.Mechanics.MultiBody.Joints.Assemblies.JointRRR jointrrr1(rRod1_ia = {20,0,0}, rRod2_ib = {-20,0,0}) annotation(Placement(visible = true, transformation(origin = {64.6808,-34.8936}, extent = {{-20,-20},{20,20}}, rotation = -90)));
+  Modelica.Mechanics.MultiBody.Joints.Revolute revolute5 annotation(Placement(visible = true, transformation(origin = {-29.233,-31.1123}, extent = {{-10,-10},{10,10}}, rotation = 0)));
+  Modelica.Mechanics.MultiBody.Joints.Assemblies.JointRRR jointrrr3(rRod1_ia = {3,-3,0}, rRod2_ib = {-3,-3,0}) annotation(Placement(visible = true, transformation(origin = {11.123,-30.7338}, extent = {{-20,20},{20,-20}}, rotation = -90)));
+  Modelica.Mechanics.MultiBody.Joints.Revolute revolute1 annotation(Placement(visible = true, transformation(origin = {-128.494,-8.67843}, extent = {{-10,-10},{10,10}}, rotation = 0)));
+  Modelica.Mechanics.MultiBody.Joints.Revolute revolute2 annotation(Placement(visible = true, transformation(origin = {-128.777,-46.8216}, extent = {{-10,-10},{10,10}}, rotation = 0)));
+  Modelica.Mechanics.MultiBody.Parts.PointMass pointmass1(m = 1) annotation(Placement(visible = true, transformation(origin = {129.228,-36.7494}, extent = {{-10,-10},{10,10}}, rotation = 0)));
+equation
+  connect(pointmass1.frame_a,jointrrr1.frame_im) annotation(Line(points = {{129.228,-36.7494},{85.5446,-36.7494},{85.5446,-36.0396},{85.5446,-36.0396}}));
+  connect(revolute1.frame_a,fixed4.frame_b) annotation(Line(points = {{-138.494,-8.67843},{-157.392,-8.67843},{-157.392,-6.21996},{-157.392,-6.21996}}));
+  connect(revolute1.frame_b,fixedtranslation9.frame_b) annotation(Line(points = {{-118.494,-8.67843},{-100.601,-8.67843},{-100.601,-8.9243},{-100.601,-8.9243}}));
+  connect(revolute2.frame_b,fixedtranslation10.frame_b) annotation(Line(points = {{-118.777,-46.8216},{-101.683,-46.8216},{-101.683,-48.678},{-101.683,-48.678}}));
+  connect(fixed5.frame_b,revolute2.frame_a) annotation(Line(points = {{-158.494,-47.1397},{-139.003,-47.1397},{-139.003,-47.5962},{-139.003,-47.5962}}));
+  connect(jointrrr3.frame_ib,fixedtranslation14.frame_b) annotation(Line(points = {{-8.87699,-46.7338},{-8.87699,-82.4821},{31.3703,-82.4821},{31.3703,-82.4821}}));
+  connect(jointrrr3.frame_ia,fixedtranslation13.frame_b) annotation(Line(points = {{-8.87699,-14.7338},{-8.87699,11.8991},{32.1816,11.8991},{32.1816,11.8991}}));
+  connect(jointrrr3.frame_im,revolute5.frame_b) annotation(Line(points = {{-8.87699,-30.7338},{-8.87699,-31.6407},{-18.6599,-31.6407},{-18.6599,-31.6407}}));
+  connect(fixedtranslation12.frame_a,jointrrr3.frame_b) annotation(Line(points = {{-26.6053,-80.6588},{6.21996,-80.6588},{11.123,-48.0295},{11.123,-50.7338}}));
+  connect(fixedtranslation11.frame_a,jointrrr3.frame_a) annotation(Line(points = {{-21.6822,14.1104},{5.6791,14.1104},{11.123,-8.02946},{11.123,-10.7338}}));
+  connect(fixed6.frame_b,revolute5.frame_a) annotation(Line(points = {{-46.8445,-30.8861},{-36.5085,-30.8861},{-39.233,-30.8419},{-39.233,-31.1123}}));
+  connect(fixedtranslation14.frame_a,jointrrr1.frame_b) annotation(Line(points = {{51.2409,-81.2742},{63.8298,-81.2742},{63.8298,-56.5957},{63.8298,-56.5957}}));
+  connect(fixedtranslation13.frame_a,jointrrr1.frame_a) annotation(Line(points = {{52.7793,12.8797},{65.9574,12.8797},{65.9574,-14.8936},{65.9574,-14.8936}}));
+  connect(prismatic4.frame_b,fixedtranslation12.frame_b) annotation(Line(points = {{-77.6331,-74.4166},{-59.6923,-74.4166},{-59.6923,-80.9231},{-47.0769,-80.9231},{-47.0769,-80.9231}}));
+  connect(prismatic3.frame_b,fixedtranslation11.frame_b) annotation(Line(points = {{-75.5975,14.6286},{-41.8462,14.6286},{-41.8462,13.5385},{-41.8462,13.5385}}));
+  connect(fixedtranslation10.frame_a,prismatic4.frame_a) annotation(Line(points = {{-81.6822,-48.0434},{-73.5385,-48.0434},{-73.5385,-60.9231},{-103.077,-60.9231},{-103.077,-74.7692},{-97.8462,-74.7692},{-97.8462,-74.7692}}));
+  connect(fixedtranslation9.frame_a,prismatic3.frame_a) annotation(Line(points = {{-79.2207,-8.96648},{-69.5385,-8.96648},{-69.5385,3.38462},{-102.462,3.38462},{-102.462,14.1538},{-96.6154,14.1538},{-96.6154,14.1538}}));
+  annotation(Icon(coordinateSystem(extent = {{-200,-200},{200,200}}, preserveAspectRatio = true, initialScale = 0.1, grid = {10,10})), Diagram(coordinateSystem(extent = {{-200,-200},{200,200}}, preserveAspectRatio = true, initialScale = 0.1, grid = {2,2})), experiment(StartTime = 0.0, StopTime = 100.0, Tolerance = 0.0001));
+end legkine2a;
+
